@@ -572,13 +572,14 @@ export class ProjectariumEngine {
     }
 
     // 3. Allocate port & create application instance
+    const appName = payload.appName || `${project.slug}-core`;
     const allocatedPort = this.allocatePort(payload.preferredPort);
-    const instanceId = `inst_${project.slug}_${payload.appName.toLowerCase().replace(/[^a-z0-9]/g, '')}_${Date.now().toString(36)}`;
+    const instanceId = `inst_${project.slug}_${appName.toLowerCase().replace(/[^a-z0-9]/g, '')}_${Date.now().toString(36)}`;
     const leaseToken = `lease_${Math.random().toString(36).substring(2, 12)}`;
 
     const newApp: ProjectariumApp = {
       id: `app-${project.slug}-${Date.now().toString(36)}`,
-      appName: payload.appName,
+      appName: appName,
       port: allocatedPort,
       instanceId: instanceId,
       leaseToken: leaseToken,
