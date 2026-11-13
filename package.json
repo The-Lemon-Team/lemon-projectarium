@@ -4,7 +4,9 @@
   "description": "Lemon-Projectarium - Project Stand Engine, Smart Upsert Handler, Multi-App Infrastructure & Dual-Level Reactive Todos",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "bin": "dist/server.js",
   "scripts": {
+    "start": "tsc && node dist/server.js",
     "build": "tsc",
     "dev": "tsc --watch",
     "watch": "tsc --watch"
