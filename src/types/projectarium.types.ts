@@ -80,7 +80,7 @@ export interface ProjectariumRegisterPayload {
   projectSlug?: string;
   projectName?: string;
   projectToken?: string;
-  appName: string;
+  appName?: string;
   preferredPort?: number;
   environment?: ProjectariumEnvironment;
   networkMode?: ProjectariumNetworkMode;
